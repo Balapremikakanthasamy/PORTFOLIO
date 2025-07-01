@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #0f0c29, #302b63, #5353c4);
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white 2%, transparent 2.5%) center/5px 5px;
+  animation: sparkle 2s linear infinite;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+@keyframes sparkle {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(10px, 10px); }
+}
+
+.glow {
+  font-size: 2.5rem;
+  color: #fff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #bb76f7, 0 0 30px #8e2de2;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #6445a2, 0 0 40px #4a00e0;
+  }
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 15px #fff;
+  object-fit: cover;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+.links a {
+  color: #ffdb58;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.links img {
+  margin: 0 10px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1); /* make icons white */
+}
+.links img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #c27fff;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(#ffffff33 2%, transparent 2.5%);
+  background-size: 20px 20px;
+  animation: sparkle 4s linear infinite;
+  top: -50%;
+  left: -50%;
+  pointer-events: none;
+}
+
+.card.blink {
+  animation: blink 0.3s ease-in-out 2;
+}
+
+@keyframes blink {
+  50% { box-shadow: 0 0 30px #ffcc00; }
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #1c1c3c;
+  color: #ccc;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { color: #fff; }
+  50% { color: #ffeb99; }
+}
+
+.cert-pdf-viewer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.cert-buttons {
+  margin-top: 1rem;
+}
+
+.cert-buttons button {
+  margin: 0 10px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  border: none;
+  background-color: #ffdb58;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cert-buttons button:hover {
+  background-color: #ffe97d;
+}
+
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.animated-video {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------
+   New Interactive Project Styles
+----------------------------- */
+
+.interactive-project {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.interactive-project:hover {
+  transform: scale(1.03);
+  border-color: #ffdb58;
+  box-shadow: 0 0 25px rgba(255, 219, 88, 0.4);
+}
+
+.project-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.project-content a {
+  color: #ffdb58;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-content a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------
+   Contact Button (Google Form)
+----------------------------- */
+
+.contact-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffdb58;
+  color: #1a1a1a;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 15px rgba(255, 219, 88, 0.4);
+}
+
+.contact-button:hover {
+  background-color: #ffe97d;
+  transform: scale(1.05);
+}
